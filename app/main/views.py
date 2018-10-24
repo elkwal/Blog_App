@@ -144,6 +144,7 @@ def category(id):
     blogs_in_category = category(id)
     return render_template('category.html' ,category= category, blogs= blogs_in_category)
 
+
 @main.route('/blog/comments/new/<int:id>',methods = ['GET','POST'])
 @login_required
 def new_comment(id):
