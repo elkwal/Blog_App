@@ -1,0 +1,16 @@
+
+{% extends 'base.html'%}
+{% import 'macros.html' as macro %}
+
+{% import 'bootstrap/wtf.html' as wtf %}
+{% block content%}
+ <div class="col-md-8">
+    {{ wtf.quick_form(blog_form) }}
+ </div>
+ <br>
+ <br>
+
+
+ {{ macro.displayBlogs(blogs)}}
+
+ {% endblock%}

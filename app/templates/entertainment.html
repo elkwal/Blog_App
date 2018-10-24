@@ -1,0 +1,26 @@
+{% extends 'base.html'%}
+{% import 'macros.html' as macro%}
+
+
+
+{% block content %}
+
+    <div class="container">
+      <div  class="row">
+        <div class="col-md-4" "well">
+        <h3>Entertainment Blog</h3>
+        <a href="{{url_for('main.newblog')}}">
+            <br>
+            ADD A NEW BLOG
+        </a>
+
+        <hr>
+
+            {{macro.displayBlogs(blogs)}}
+        <hr>
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}

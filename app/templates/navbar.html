@@ -1,0 +1,48 @@
+<div class="navbar navbar-default" role="navigation" style="background-color:Purple; border:Black;">
+  <div class="container-fluid">
+
+    <div class="navbar-header">
+
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+      </button>
+
+      <ul class="nav navbar-nav navbar-right">
+
+      <a class="navbar-brand" href="/" style="color:Green; font-weight:bolder;"> <a href="/" class="btn btn-btn-success">
+                <h4>Home</h4>
+              </a></a>
+      <a class="navbar-brand" href="/" style="color:Green; font-weight:bolder;"> <a href="/" class="btn btn-btn-success">
+                <h4>Fashion</h4>
+                <a></a>
+      <a class="navbar-brand" href="/" style="color:Green; font-weight:bolder;"> <a href="/" class="btn btn-btn-success">
+                <h4>Entertainment</h4>
+                <a></a>
+      <a class="navbar-brand" href="/" style="color:Green; font-weight:bolder;"> <a href="/" class="btn btn-btn-success">
+                <h4>Business</h4>
+                <a></a>
+
+        </ul>
+    </div>
+
+    <div class="navbar-collapse collapse">
+
+      <ul class="nav navbar-nav navbar-right">
+
+        {% if current_user.is_authenticated %}
+        <li><a href="{{url_for('main.profile',uname=current_user.username)}}" style="color:Blue; font-weight:bolder;">Profile ({{current_user.username}})</a></li>
+
+        <li><a href="{{url_for('auth.logout')}}" style="color:Blue; font-weight:bolder;">Sign out</a></li>
+        {% else %}
+        <li><a href="{{url_for('auth.login')}}" style="color:Blue; font-weight:bolder;">Log in</a></li>
+        {%endif%}
+      </ul>
+
+
+    </div>
+
+  </div>
+</div>

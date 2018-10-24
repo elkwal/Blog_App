@@ -1,0 +1,27 @@
+
+{% extends 'base.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
+{% block body %}
+
+    <div class="container">
+        <hr>
+            <div class="list-group">
+                <a href="#" class="list-group-item list-group-item-action active">
+                    Comments
+                </a>
+                <a href="#" class="list-group-item list-group-item-action disabled">
+                    {{blog.blog}}
+                </a>
+            </div>
+        {{ wtf.quick_form(form_comment) }}
+
+        {% for comment in comments %}
+        <div class="list-group">
+            <a href="#" class="list-group-item list-group-item-action disabled">
+                <strong class="primarylist-group-item list-group-item-action active" >{{blog.user.username}} </strong> {{comment.comment}}
+            </a>
+        </div>
+        {% endfor %}
+
+    </div>
+{% endblock %}

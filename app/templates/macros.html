@@ -1,0 +1,15 @@
+{% macro displayBlogs(blogs) %}
+
+
+{% for blog in blogs %}
+  <p>{{blog.blog}}</p>
+  <br>
+  <a href="{{url_for('main.new_comment',id=blog.id)}}">Add a Comment</a>
+  <a href="{{url_for('main.view_comments',id=blog.id)}}">View Comments</a>
+  <a href="{{url_for('main.new_comment',id=blog.id)}}">Vote</a>
+  <br>
+
+
+
+{% endfor %}
+{% endmacro%}
